@@ -1,0 +1,7 @@
+.question-type {
+    float: right;
+}
+
+.delete-question, .duplicate-question {
+    width: 100px;
+}

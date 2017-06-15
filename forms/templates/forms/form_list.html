@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'form-create' %}" class="btn btn-info">New Form</a>
+<div class="row">
+{% for form in object_list %}
+{% if form.owner == user %}
+<div class="col-sm-4">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">{{ form.title }}</h4>
+      <p class="card-text">{{ form.description }}</p>
+      <a href="#" class="btn btn-primary">View</a>
+    </div>
+  </div>
+</div>
+{% else %}
+<div class="col-sm-4">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">{{ form.title }}</h4>
+      <p class="card-text">{{ form.description }}</p>
+      <a href="{% url 'view-form' username=form.owner.username pk=form.id %}" class="btn btn-success">Fill</a>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endfor %}
+</div>
+{% endblock %}
