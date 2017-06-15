@@ -8,7 +8,7 @@ pip install -r requirements.txt
 ```
 Start Python SMTP server before starting Django development server
 ```
-python -m smtpd -nDebuggingServer localhost:1025
+python -m smtpd -n -c DebuggingServer localhost:1025
 ```
 Run Django server
 ```
