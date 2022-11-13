@@ -10,7 +10,7 @@ Start Python SMTP server before starting Django development server
 ```
 python -m smtpd -n -c DebuggingServer localhost:1025
 ```
-Run Django server
+Run Django development server
 ```
 python manage.py runserver
 ```
